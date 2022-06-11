@@ -1,7 +1,6 @@
 
 import Header from '../components/Header'
-
-
+import Sidebar from '../components/Sidebar'
 
 import {
     AppShell,
@@ -17,7 +16,9 @@ const CustomAppShell = ({ children }: any) => {
             asideOffsetBreakpoint='sm'
             fixed
             style={{
-                overflowX: 'hidden'
+                overflowX: 'hidden',
+                backgroundColor: 'rgba(0,0,0,0.5)',
+                backdropFilter: "blur(10px)",
             }}
             styles={{
                 main: {
@@ -29,6 +30,9 @@ const CustomAppShell = ({ children }: any) => {
                 }
             }}
             header={<Header />}
+
+            navbar={<Sidebar />}
+
         >
             <div
                 className='AppShellBody overflow-x-hidden'

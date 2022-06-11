@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Container } from '@mantine/core'
+import { Container, Grid } from '@mantine/core'
 import Sidebar from '../components/Sidebar'
+import Content from '../components/Content';
 
 const Home: NextPage = () => {
   return (
@@ -13,8 +14,11 @@ const Home: NextPage = () => {
       </Head>
 
 
-      <Container size={1366}>
-        <Sidebar />
+      <Container fluid px={0}>
+        <div className="flex">
+          <Sidebar />
+          <Content />
+        </div>
       </Container>
 
     </div>

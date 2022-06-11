@@ -17,6 +17,7 @@
     "@mantine/notifications": "^4.2.6",
     "@mantine/spotlight": "^4.2.6",
     "@reduxjs/toolkit": "^1.8.2",
+    "@types/styled-components": "^5.1.25",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",

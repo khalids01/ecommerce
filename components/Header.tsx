@@ -1,4 +1,13 @@
-import { Burger, Text, Group, Avatar, Select, MediaQuery, useMantineTheme, Container } from "@mantine/core";
+import {
+    Burger,
+    Text,
+    Group,
+    Avatar,
+    Select,
+    MediaQuery,
+    useMantineTheme,
+    Container
+} from "@mantine/core";
 import Image from "next/image";
 import { useState, forwardRef } from 'react';
 import Link from "next/link";
@@ -9,6 +18,7 @@ import { Tooltip } from "@mantine/core";
 import Menu from './Menu'
 import { useSelector } from "react-redux";
 import { selectStatus } from '../redux/store';
+import styled from 'styled-components';
 
 interface selectOption {
     image?: HTMLImageElement | JSX.Element,
@@ -96,13 +106,15 @@ const SearchSuggestions = () => {
                 allowDeselect
                 clearable
                 creatable
-                radius={50}
+                radius={0}
                 iconWidth={30}
                 maxDropdownHeight={300}
+
                 nothingFound="No results found"
                 classNames={{ input: 'bg-slate-900/20 backdrop-blur-md  placeholder:text-teal-400 text-teal-400 ' }}
                 style={{
                     minWidth: '300px',
+                    border: 'none'
                 }}
 
                 filter={(value, item) =>
@@ -115,6 +127,26 @@ const SearchSuggestions = () => {
     )
 }
 
+
+const Header = styled.header`
+    position: relative;
+    z-index: 3;
+    display: inline-block; 
+    padding: 0 16px;
+    border-bottom: 1px solid var(--border-color);
+`
+
+const NavItems = () => {
+    <MediaQuery
+        smallerThan={'md'}
+        styles={{
+            flexDirection: "column"
+        }}
+    >
+
+    </MediaQuery>
+}
+
 const CustomHeader = () => {
     const [isOpen, setIsOpen] = useState(false);
     const theme = useMantineTheme();
@@ -122,9 +154,9 @@ const CustomHeader = () => {
 
 
     return (
-        <header className="pt-4 px-3" >
+        <Header className="w-full">
 
-            <Container size={1366} className="flex justify-between items-center bg-glass w-full container py-2 px-4 rounded-full">
+            <Container fluid className="header-container flex justify-between items-center ">
                 <MediaQuery largerThan='sm' styles={{ display: 'none' }}>
                     <Burger
                         opened={isOpen}
@@ -187,7 +219,7 @@ const CustomHeader = () => {
                 </div>
             </Container>
 
-        </header>
+        </Header>
     )
 }
 

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
 html,
 body {
   min-height: 100vh;
@@ -9,6 +14,40 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Poppins, sans-serif';
+}
+
+body {
+  position: relative;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+:root {
+  --theme-bg-color: #10121b66;
+  --border-color: #71779040;
+  --theme-color: #f9fafb;
+  --inactive-color: #717790c7;
+  --hover-menu-bg: #0c0f194d;
+  --content-title-color: #999ba5;
+  --content-bg: #9297b321;
+  --button-inactive: #f9fafb8c;
+  --dropdown-bg: #21242d;
+  --dropdown-hover: #2a2e3c;
+  --popup-bg: #161925;
+  --search-bg: #14162b;
+  --overlay-bg: #24273b4d;
+  --scrollbar-bg: #01020366;
+}
+
+body main,
+body .container,
+body header,
+body aside,
+body aside {
+  position: relative;
+  z-index: 2;
 }
 
 a {
@@ -21,8 +60,12 @@ a {
   font-family: 'Poppins, sans-serif';
 }
 
+/* 
 @layer components {
-  .bg-glass {
-    @apply bg-purple-400/20 backdrop-blur-md;
-  }
+
+} */
+
+.bg-glass {
+  background-color: var(--theme-bg-color);
+  backdrop-filter: blur(20px);
 }
